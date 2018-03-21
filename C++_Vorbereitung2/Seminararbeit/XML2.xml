@@ -1,0 +1,45 @@
+<figur xml:id="1">
+        <vorname>Harry</vorname>
+        <name>Potter</name>
+        <patronus>Hirsch</patronus>
+        <geschlecht> männlich </geschlecht>
+        <extra>Er ist im Haus: Gryffindor</extra>
+    </figur>
+    
+     <figur xml:id="2">
+         <vorname>Ron</vorname>
+        <name>Weasley</name>
+        <patronus>Hund</patronus>
+        <geschlecht> männlich </geschlecht>
+        <extra>Er ist im Haus: Gryffindor</extra>
+    </figur>
+
+<figur xml:id="3">
+    <name >Hermine Granger</name>
+    <patronus>19.09.1979</patronus>
+    <geschlecht> weiblich </geschlecht>
+    <extra> Sie ist im Haus: Gryffindor</extra>
+</figur>
+
+
+<figur xml:id="4">
+    <name> Albus Dumbledore</name>
+    <patronus>10.08.1881</patronus>
+    <geschlecht>männlich</geschlecht>
+    <extra> Er ist der Schulleiter von Hogwarts.</extra>
+</figur>
+
+
+<figur xml:id="5">
+    <name> Lord Voldemort</name>
+    <patronus> 31.12.1926</patronus>
+    <geschlecht>männlich</geschlecht>
+    <extra> Besondere Fähigkeit: Parselmund</extra>
+</figur>
+
+<figur xml:id="6">
+    <name>Dobby</name>
+    <patronus>Unbekannt</patronus>
+    <geschlecht>männlich</geschlecht>
+    <extra>Er beherrscht Hauselfenmagie </extra>
+</figur>
