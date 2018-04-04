@@ -9,5 +9,10 @@ Das entwickelte Programm ist ein System für einen Verlag. Damit lassen sich Dat
 ### (x)ml anzeigen
 
 ### (h)ilfe
-
+•	Dieser Menüpunkt gibt dem User Hilfe, falls er nicht versteht was er eingeben soll:
+•	b: beendet das Programm 
+t: öffnet die Textdatei
+x: öffnet die XML-Datei 
+k: konvertiert beide Dateien
 ### (b)eenden
+•	Beendet das Programm 
