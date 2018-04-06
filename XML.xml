@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="hpfiguren.xsl"?>
+<Figurenverzeichnis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="DTD.dtd">
+    <figur xml:id="1">
+        <name> Harry Potter</name>
+        <gebdatum>31.07.1980</gebdatum>
+        <geschlecht> männlich </geschlecht>
+        <extra>Er ist im Haus: Gryffindor</extra>
+    </figur>
+    
+    <figur>
+        <name xml:id="2"> Ron Weasley</name>
+        <gebdatum>01.03.1980</gebdatum>
+        <geschlecht> männlich </geschlecht>
+        <extra>Er ist im Haus: Gryffindor</extra>
+    </figur>
+    
+    <figur>
+        <name xml:id="3"> Hermine Granger</name>
+        <gebdatum>19.09.1979</gebdatum>
+        <geschlecht> weiblich </geschlecht>
+        <extra> Sie ist im Haus: Gryffindor</extra>
+    </figur>
+    
+    
+    <figur>
+        <name xml:id="4"> Albus Dumbledore</name>
+        <gebdatum>10.08.1881</gebdatum>
+        <geschlecht>männlich</geschlecht>
+        <extra> Er ist der Schulleiter von Hogwarts.</extra>
+    </figur>
+
+    
+    <figur>
+        <name xml:id="5"> Lord Voldemort</name>
+        <gebdatum> 31.12.1926</gebdatum>
+        <geschlecht>männlich</geschlecht>
+        <extra> Besondere Fähigkeit: Parselmund</extra>
+    </figur>
+    
+    <figur>
+        <name xml:id="6">Dobby</name>
+        <gebdatum>Unbekannt</gebdatum>
+        <geschlecht>männlich</geschlecht>
+        <extra>Er beherrscht Hauselfenmagie </extra>
+    </figur>
+    
+</Figurenverzeichnis>
