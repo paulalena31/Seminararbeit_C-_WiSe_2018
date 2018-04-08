@@ -17,7 +17,7 @@ k: konvertiert beide Dateien
 ### (b)eenden
 •	Beendet das Programm 
 ## Funktionsweise
-# TXT einlesen
-• zunächst wird das Objekt "ClTxt" zum Pointer "TxtClass" erstellt
-in der main Funktion wird die Textdatei geöffnet
-
+### TXT einlesen
+•In der main source wird zunächst der Pointer "TxtClass" zum Objekt "ClTxt" erstellt. (Zeile 14)
+•Die Textdatei wird geöffnet (Zeile 30)
+die "verarbeite" funktion übergibt die eben geöffnete Textdatei
