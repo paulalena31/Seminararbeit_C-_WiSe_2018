@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT Figurenverzeichnis (Figur+)>
-<!ELEMENT Figur (name,gebdatum,geschlecht,extra)>
-<!ELEMENT name (#PCDATA)>
-<!ELEMENT gebdatum (#PCDATA)>
-<!ELEMENT geschlecht (#PCDATA)>
-<!ELEMENT extra (#PCDATA)>
