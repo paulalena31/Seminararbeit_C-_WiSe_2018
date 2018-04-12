@@ -1,48 +1,65 @@
-
 # Dokumentation
-Das entwickelte Programm ist ein System für einen Verlag. Damit lassen sich Daten aus einer XML-Datei mit weiteren Daten aus einer TXT-Datei zusammenführen, welche wichtige Informationen enthalten, die für den Druck des Buches elementar sind. Diese neu erzeugte Datei aus den beiden Ursprungsdateien wird nach der Konvertierung als XML-Datei abgespeichert.
+Ein Verlag (fiktiv) will ein neues Buch über die Charaktere der Film- und Buchreihe Harry Potter herausbringen. Dafür müssen die Figuren mit den bereits vorhandenen Fakten noch nach der Zugehörigkeit in die Kategorien „Schüler“, „Lehrer“, „Bösewicht“ und „Kreatur“ sortiert werden. Außerdem muss auch noch jeder Figur die Seitenanzahl zugeschrieben werden, die in dem Buch der jeweiligen Figur zur Verfügung steht.
+
+Das entwickelte Programm ist ein System für diesen Verlag. Damit lassen sich Daten aus einer XML-Datei mit weiteren Daten aus einer TXT-Datei zusammenführen, welche wichtige Informationen enthalten, die für den Druck des Buches elementar sind. Diese neu erzeugte Datei aus den beiden Ursprungsdateien wird nach der Konvertierung als XML-Datei abgespeichert.
 ## Menü
 ### (k)onvertieren
 •	Der erste Menüpunkt ermöglicht die Zusammenführung der beiden Datenquellen: der XML-Datei und der TXT-Datei. Der User wird nach einem beliebigen Dateinamen gefragt und die neue XML-Instanz wird im "build..."-Verzeichnis abgespeichert.
 ### (t)xt anzeigen
-• Die TXT-Datei (Textdatei.txt), welche im Ordner "Seminararbeit" liegt, wird eingelesen und ausgeben.
+• Die TXT-Datei "Textdatei.txt", welche im Ordner "Daten" liegt, wird eingelesen und ausgeben.
 ### (x)ml anzeigen
-• Die XML-Datei (XML2.xml) wird eingelesen und ausgeben, welche im Ordner "Seminararbeit" liegt, wird eingelesen und ausgeben.
+• Die XML-Datei "XML2.xml", welche im Ordner "Daten" liegt, wird eingelesen, mit der Textdatei zusammengeführt und ausgeben.
 ### (h)ilfe
-•	Dieser Menüpunkt gibt dem User Hilfe, falls er nicht versteht was er eingeben soll:
-b: beendet das Programm 
+Dieser Menüpunkt gibt dem User Hilfe, falls er nicht versteht was er eingeben soll:
+
+k: konvertiert beide Dateien und ermöglicht die Abspeicherung unter beliebigem Namen
 t: öffnet die Textdatei
-x: öffnet die XML-Datei 
-k: konvertiert beide Dateien
+x: öffnet die XML-Datei mit den Daten der Textdatei
+b: beendet das Programm 
+
+
+
 ### (b)eenden
 •	Beendet das Programm 
 ## Funktionsweise
 ### TXT einlesen und ausgeben
-•In der main source wird zunächst der Pointer "CLTxt" zum Objekt "TxtClass" erstellt. (Zeile 14)
-•Die Textdatei wird geöffnet (Zeile 30)
-die "verarbeite" Funktion übergibt die eben geöffnete Textdatei
-sie wird in der txtlib.cpp ausgeführt
-Dabei wird im Switch Case Zeichen für Zeichen durchgegangen und bei bestimmten Zeichen gespeichert
-danach wird über next die nächste Zeile durchgegangen
+*Die Datei "Textdatei.txt" muss für die Funktion des Programms im build-Verzeichnis liegen*
 
-### XML einlesen und ausgeben
-•XML Datei wird mittels einer DTD validiert
-In der main source wird zunächst der Pointer "ClXml" zum Objekt "XmlClass" erstellt. (Zeile 15)
-die Xml Datei wird geöffnet
-Der Pointer zeigt auf die ladeDateien Funktion 
-in der Xmllib dann aufgerufen
-sie läd die txt datei
-im switch case wird die XML-Datei nach Zeichen überprüft und ein jeweiliger Zustand bestimmt
-diese Zustände werden in Zeile 109-116 bestimmt
-über next wird beim letzten zustand wieder zur nächsten ID übergegangen
-" zeigen das Schließen danach wird ID gelesen und gespeichert
-zeile 92 wird nach ID in liste gesucht
-pointer zur txt wird in "richtigeID" zwischen gespeichert
-wenn richtigeID ungleich 0 dann wird die Datei gelesen bis endoffile (for schleife, die nur bei end of file endet) Zeile 37
+ - In der Main-Funktion werden die Objekte vom Typ ClTxt und ClXml     erstellt
+ - Die Textdatei wird über den ifstream gelesen 
+ - im txtheader.h sind die Variablen Id, Kategorie und Seitenanz deklariert
+ - Die "verarbeite" - Funktion übergibt die eben gelesene Textdatei und sie wird in der txtlib.cpp ausgeführt
+ - Die "verarbeite" - Funktion parst die Textdatei und wandelt sie in die ClTxt-Struktur um, um eine linked List zu erzeugen
+ - Jedes Zeichen wird durchlaufen und nach Steuerzeichen überprüft
+ - Die jeweiligen Daten in den Klassenvariablen der ClTxt werden gespeichert
+ -   So wird Objekt für Objekt durchgegangen und gespeichert
+ - Gibt der User im Menü "t" ein, wird die Funktion "druckeElement" aufgerufen
+ - Diese wird in der txtlib.cpp ausgeführt und gibt die Variablen der Objekte des Typs ClTxt in lesbarer Schrift aus, in der die ID, Kategorie und Seitenanzahl enthalten sind
+
+### XML einlesen, mit der Textdatei zusammenführen und ausgeben
+*Für die Ausführung des Programms müssen die DTD und die XML-Datei namens "XML.xml"  im build-Verzeichnis liegen*
+
+ - Die XML-Datei wird über den ifstream eingelesen
+ - header
+ - Die "ladeDateien" Funktion übergibt die eingelesene XML-Datei und auch die TxtClass und sie wird in der xmllib.cpp ausgeführt
+ - Wie auch bei der Textdatei werden die Daten der XML geparst und nach Steuerzeichen überprüft
+ - Nach den jeweiligen Zuständen werden aus dem Puffer die Daten aus der Datei in das Objekt gespeichert
+ - Sobald das Zeichen ' " ' erkannt wird, wird die ID aus der XML gelesen und es wird in der ClTxt nach der ID gesucht
+ - Ist "RichtigeID" ungleich 0, dann wird bis eof. eingelesen
+ - Kategorie und Seitenanzahl werden aus der ClTxt gelesen und in der ClXml gespeichert
+ - Gibt der User "x" ein, wird die Funktion "druckePerson" aufgerufen, welche die zuvor geparste Datei mit den zusammengeführten Daten aus der Textdatei ausgibt
+ 
 
 ### Konvertierung
+*Die konvertierte XML-Datei wird sich unter dem abgespeicherten Namen im build-Verzeichnis befinden*
 
-die konvertierte Datei findet sich im build Verzeichnis
+ - Gibt der User "k" ein, wird er erstmal nach einem Dateinnamen gefragt
+ - über den ofstream wird eine Augabedatei mit dem Parameter des Dateinamens geöffnet
+ - Die Funktion: "konvertAlles" wird aufgerufen und schreibt die Daten des aktuellen Objekts in die neue XML-Datei
+ - Es wird kontrolliert, ob es ein folgendes Objekt gibt (next) oder nicht
+ - Falls ja, wird das nächste ausgeführt und die nächste Person in der Liste wird in die XML-Datei eingetragen
+ - Falls nicht, endet der Vorgang 
+
 
 
 
