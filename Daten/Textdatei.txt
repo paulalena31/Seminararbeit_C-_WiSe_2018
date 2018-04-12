@@ -1,0 +1,6 @@
+1) Schueler: 10;
+5) Boesewicht: 9;
+3) Schueler: 8;
+4) Lehrer:  12;
+6) Kreatur: 5;
+2) Schueler: 7;
