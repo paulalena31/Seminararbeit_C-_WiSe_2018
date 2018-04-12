@@ -12,10 +12,10 @@ Das entwickelte Programm ist ein System für diesen Verlag. Damit lassen sich Da
 ### (h)ilfe
 Dieser Menüpunkt gibt dem User Hilfe, falls er nicht versteht was er eingeben soll:
 
-k: konvertiert beide Dateien und ermöglicht die Abspeicherung unter beliebigem Namen
-t: öffnet die Textdatei
-x: öffnet die XML-Datei mit den Daten der Textdatei
-b: beendet das Programm 
+ - k: konvertiert beide Dateien und ermöglicht die Abspeicherung unter beliebigem Namen
+ - t: öffnet die Textdatei
+ - x: öffnet die XML-Datei mit den Daten der Textdatei
+ - b: beendet das Programm 
 
 
 
