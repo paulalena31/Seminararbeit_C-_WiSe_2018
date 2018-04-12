@@ -1,6 +1,0 @@
-1 schueler 10
-2 schueler 7
-3 schueler 8
-4 lehrer  12
-5 boesewicht 9
-6 kreatur 5
