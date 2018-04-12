@@ -26,13 +26,13 @@ b: beendet das Programm
 *Die Datei "Textdatei.txt" muss für die Funktion des Programms im build-Verzeichnis liegen*
 
  - In der Main-Funktion werden die Objekte vom Typ ClTxt und ClXml     erstellt
- - Die Textdatei wird über den ifstream gelesen 
- - im txtheader.h sind die Variablen Id, Kategorie und Seitenanz deklariert
+ - Die Textdatei wird über den ifstream eingelesen 
+ - Im txtheader.h sind die Variablen Id, Kategorie und Seitenanz deklariert
  - Die "verarbeite" - Funktion übergibt die eben gelesene Textdatei und sie wird in der txtlib.cpp ausgeführt
  - Die "verarbeite" - Funktion parst die Textdatei und wandelt sie in die ClTxt-Struktur um, um eine linked List zu erzeugen
  - Jedes Zeichen wird durchlaufen und nach Steuerzeichen überprüft
  - Die jeweiligen Daten in den Klassenvariablen der ClTxt werden gespeichert
- -   So wird Objekt für Objekt durchgegangen und gespeichert
+ -   So wird jedes Objekt durchgegangen und ruft das nächste auf bis keines mehr folgt
  - Gibt der User im Menü "t" ein, wird die Funktion "druckeElement" aufgerufen
  - Diese wird in der txtlib.cpp ausgeführt und gibt die Variablen der Objekte des Typs ClTxt in lesbarer Schrift aus, in der die ID, Kategorie und Seitenanzahl enthalten sind
 
@@ -40,12 +40,12 @@ b: beendet das Programm
 *Für die Ausführung des Programms müssen die DTD und die XML-Datei namens "XML.xml"  im build-Verzeichnis liegen*
 
  - Die XML-Datei wird über den ifstream eingelesen
- - header
+ - Im xmlheader.h sind die Variablen und Zustände gespeichert 
  - Die "ladeDateien" Funktion übergibt die eingelesene XML-Datei und auch die TxtClass und sie wird in der xmllib.cpp ausgeführt
  - Wie auch bei der Textdatei werden die Daten der XML geparst und nach Steuerzeichen überprüft
  - Nach den jeweiligen Zuständen werden aus dem Puffer die Daten aus der Datei in das Objekt gespeichert
  - Sobald das Zeichen ' " ' erkannt wird, wird die ID aus der XML gelesen und es wird in der ClTxt nach der ID gesucht
- - Ist "RichtigeID" ungleich 0, dann wird bis eof. eingelesen
+ - Ist "RichtigeID" ungleich 0, wird bis eof. eingelesen
  - Kategorie und Seitenanzahl werden aus der ClTxt gelesen und in der ClXml gespeichert
  - Gibt der User "x" ein, wird die Funktion "druckePerson" aufgerufen, welche die zuvor geparste Datei mit den zusammengeführten Daten aus der Textdatei ausgibt
  
@@ -54,13 +54,8 @@ b: beendet das Programm
 *Die konvertierte XML-Datei wird sich unter dem abgespeicherten Namen im build-Verzeichnis befinden*
 
  - Gibt der User "k" ein, wird er erstmal nach einem Dateinnamen gefragt
- - über den ofstream wird eine Augabedatei mit dem Parameter des Dateinamens geöffnet
+ - Über den ofstream wird eine Ausgabedatei mit dem Parameter des Dateinamens geöffnet
  - Die Funktion: "konvertAlles" wird aufgerufen und schreibt die Daten des aktuellen Objekts in die neue XML-Datei
  - Es wird kontrolliert, ob es ein folgendes Objekt gibt (next) oder nicht
- - Falls ja, wird das nächste ausgeführt und die nächste Person in der Liste wird in die XML-Datei eingetragen
+ - Falls ja, wird das nächste ausgeführt und die nächste Person in der Liste wird in die XML-Datei eingetragen (Rekursion)
  - Falls nicht, endet der Vorgang 
-
-
-
-
-
